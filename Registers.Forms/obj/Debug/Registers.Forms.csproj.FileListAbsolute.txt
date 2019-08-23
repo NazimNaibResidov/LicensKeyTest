@@ -1,0 +1,10 @@
+C:\Users\resid\source\repos\Registers\Registers.Forms\bin\Debug\Registers.Forms.exe.config
+C:\Users\resid\source\repos\Registers\Registers.Forms\bin\Debug\Registers.Forms.exe
+C:\Users\resid\source\repos\Registers\Registers.Forms\bin\Debug\Registers.Forms.pdb
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.csprojAssemblyReference.cache
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.LisansForm.resources
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.Properties.Resources.resources
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.csproj.GenerateResource.cache
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.csproj.CoreCompileInputs.cache
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.exe
+C:\Users\resid\source\repos\Registers\Registers.Forms\obj\Debug\Registers.Forms.pdb

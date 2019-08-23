@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LisansDogrulama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="taleb" type="tns:LisansTaleb" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LisansTaleb">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HDD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hash" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tarix" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LisansDogrulamaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LisansDogrulamaResult" type="tns:LisansCavab" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LisansCavab">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DogurlulamaKodu" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HDD" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tarix" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hash" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LisansDogrulamaSoapIn">
+    <wsdl:part name="parameters" element="tns:LisansDogrulama" />
+  </wsdl:message>
+  <wsdl:message name="LisansDogrulamaSoapOut">
+    <wsdl:part name="parameters" element="tns:LisansDogrulamaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LisensSoap">
+    <wsdl:operation name="LisansDogrulama">
+      <wsdl:input message="tns:LisansDogrulamaSoapIn" />
+      <wsdl:output message="tns:LisansDogrulamaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LisensSoap" type="tns:LisensSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LisansDogrulama">
+      <soap:operation soapAction="http://tempuri.org/LisansDogrulama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LisensSoap12" type="tns:LisensSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LisansDogrulama">
+      <soap12:operation soapAction="http://tempuri.org/LisansDogrulama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Lisens">
+    <wsdl:port name="LisensSoap" binding="tns:LisensSoap">
+      <soap:address location="http://localhost:60873/Lisens.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LisensSoap12" binding="tns:LisensSoap12">
+      <soap12:address location="http://localhost:60873/Lisens.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
